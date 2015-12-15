@@ -74,5 +74,20 @@ html.no-js(lang='en')
           $(".content").hide();
           $(".content."+path).fadeIn();
         });
+        $(".box.register").click(function(){
+          var image = $(".keyword > p").text().split(")");
+          var tag = $('#name').tagit('assignedTags');
+          var comment = $(".comment input").val();
+          $.ajax({
+            url: "/photos/update",
+            type: "POST",
+            data: JSON.stringify({file: fileName, image: image, tag: tag, comment: comment}),
+            contentType: "application/json; charset=utf-8",
+            processData: false,
+          })
+          .done(function(data) {
+            alert(data);
+          });
+        });
       }());
 
