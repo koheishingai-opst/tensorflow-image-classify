@@ -251,3 +251,47 @@ a:focus {
     padding: 2em 1em 2em;
     text-align: center;
 }
+body > .menu {
+    background: #fff;
+    color: #666;
+    font-size: small;
+    outline-width: 0;
+    outline: none;
+    position: relative;
+    z-index: 102;
+    height: 42px;
+}
+body > .menu > .inner {
+	outline-width: 0;
+    outline: none;
+    display: inline-block;
+    float: left;
+    position: relative;
+    white-space: nowrap;
+	height: 100%;
+}
+body > .menu > .inner > .item {
+    border-bottom: 3px solid transparent;
+    color: #777;
+    font-weight: normal;
+    margin: 2px 12px 0;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 35px;
+	float: left;
+	cursor: pointer;
+}
+body > .menu > .inner > .item:hover {
+    color: #222;
+}
+body > .menu > .inner > .item.selected {
+    border-bottom: 3px solid #d3394c;
+    color: #d3394c;
+    font-weight: bold;
+    margin: 2px 12px 0;
+    padding: 0 8px;
+    height: 40px;
+    margin-left: 128px;
+    line-height: 35px;
+	cursor: default;
+}

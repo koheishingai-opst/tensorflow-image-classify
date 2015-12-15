@@ -15,9 +15,13 @@ html.no-js(lang='en')
     script.
       (function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
   body
+    .menu
+      .inner
+        .item.selected 登録
+        .item 閲覧
     .container
       header.codrops-header
-        h1 TensorFlow画像解析デモ
+        h1 画像分類デモ
         p
           strong
             a(href='https://www.tensorflow.org/versions/master/tutorials/image_recognition/index.html', target='_blank') TensorFlow
