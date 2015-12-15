@@ -298,3 +298,6 @@ body > .menu > .inner > .item.selected {
 .box.tag {
     display: none;
 }
+.box.register {
+    display: none;
+}
