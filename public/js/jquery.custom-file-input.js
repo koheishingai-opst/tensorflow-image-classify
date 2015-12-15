@@ -48,8 +48,8 @@ $.ajax({
 
 var output = data.split(")").join(")<br />");
 $(".keyword > .loading").hide();
-// $(".keyword > img").attr("src", "http://104.155.201.35:3000/uploads/" +  fileName);
-$(".keyword > img").attr("src", "http://localhost:3000/uploads/" +  fileName);
+$(".keyword > img").attr("src", "http://104.155.201.35:3000/uploads/" +  fileName);
+// $(".keyword > img").attr("src", "http://localhost:3000/uploads/" +  fileName);
 $(".keyword > p").html(output);
 $(".box.tag").fadeIn();
 $(".box.keyword").fadeIn();
