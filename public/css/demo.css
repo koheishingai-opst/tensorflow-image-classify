@@ -292,7 +292,6 @@ body > .menu > .inner > .item.selected {
     margin: 2px 12px 0;
     padding: 0 8px;
     height: 40px;
-    margin-left: 128px;
     line-height: 35px;
 	cursor: default;
 }
@@ -300,7 +299,9 @@ body > .menu > .inner > .item.right {
     position: absolute;
     right: 13px;
 }
-
+body > .menu > .inner > .item.left {
+    margin-left: 128px;
+}
 .box.tag {
     display: none;
 }
@@ -310,4 +311,22 @@ body > .menu > .inner > .item.right {
     color: white;
 	font-weight: bold;
 	cursor: pointer;
+}
+.box.comment {
+    display: none;
+}
+.box.keyword {
+    display: none;
+}
+.content.update {
+    display: none;
+}
+.content.check {
+    display: none;
+}
+.content.like {
+    display: none;
+}
+.content.about {
+    display: none;
 }

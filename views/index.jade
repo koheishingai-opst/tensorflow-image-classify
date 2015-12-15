@@ -4,7 +4,7 @@ html.no-js(lang='en')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title TensorFlow画像解析デモ
+    title 画像分類デモ
     meta(name='description', content='Demo for the tutorial: Styling and Customizing File Inputs the Smart Way')
     meta(name='keywords', content='cutom file input, styling, label, cross-browser, accessible, input type file')
     meta(name='author', content='Osvaldas Valutis for Codrops')
@@ -12,16 +12,18 @@ html.no-js(lang='en')
     link(rel='stylesheet', type='text/css', href='css/normalize.css')
     link(rel='stylesheet', type='text/css', href='css/demo.css')
     link(rel='stylesheet', type='text/css', href='css/component.css')
+    link(rel='stylesheet', type='text/css', href='http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css')
+    link(rel='stylesheet', type='text/css', href='css/tagit.css')
     script.
       (function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
   body
     .menu
       .inner
-        .item.selected 投稿
-        .item Update
-        .item Good/Bad
-        .item いいね
-        .item.right 説明
+        .item.left.selected(data="post") 投稿
+        .item(data="update") Update
+        .item(data="check") Good/Bad
+        .item(data="like") いいね
+        .item.right(data="about") 説明
     .container
       header.codrops-header
         h1 画像分類デモ
@@ -29,7 +31,7 @@ html.no-js(lang='en')
           strong
             a(href='https://www.tensorflow.org/versions/master/tutorials/image_recognition/index.html', target='_blank') TensorFlow
           | を利用し、タグ生成と画像分類の補助を行います
-      .content
+      .content.post
         .box
           form#img(action="/photos/upload" method="post" enctype="multipart/form-data")
             input#file-7.inputfile.inputfile-6(type='file', name='file-7[]', data-multiple-caption='{count} files selected', multiple='')
@@ -45,7 +47,31 @@ html.no-js(lang='en')
           p
           img
         .box.tag
+          ul#name
+            li
+        .box.comment
+          ul#name.tagit.ui-widget.ui-widget-content.ui-corner-all
+            li.tagit-new(style="width:100%;")
+              input.ui-widget-content.ui-autocomplete-input(type='text', autocomplete='off', role='textbox', aria-autocomplete='list', aria-haspopup='true', placeholder='コメントを入力してください')
         .box.register 登録
+      .content.update update
+      .content.check check
+      .content.like like
+      .content.about about
     script(src="js/jquery-v1.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js")
     script(src="js/jquery.custom-file-input.js")
+    script(src="js/tag-it.js")
+    script.
+      $(document).ready(function() {
+        $("#name").tagit({placeholderText: "タグを入力してください"});
+      });
+    script.
+      (function() {
+        $(".item").click(function(){$(this).addClass("selected");$(".item").not(this).removeClass("selected");
+          var path = $(this).attr("data");
+          $(".content").hide();
+          $(".content."+path).fadeIn();
+        });
+      }());
 

@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#myTags").tagit();
+
+        var array = ["1", "2", "3", "4"];
+        $('#name').append('<li>' + array[3] +'</li>'); //Using Option 2
+        $("#name").tagit({
+            itemName: "teamId",
+            fieldName: "teamName",
+            availableTags: array,
+            allowSpaces:true,
+            caseSensitive:false,
+            removeConfirmation:true,
+            placeholderText:"Tag Group..."
+        });
+        $("#name").tagit("createTag", "NewTag");  //Using option 3
+    });
+</script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+<link href="css/tagit.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <ul id="name">
+       <li>0</li>  <!-- Using option 1 -->
+    </ul>
+</body>
+</html>
