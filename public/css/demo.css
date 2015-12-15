@@ -269,6 +269,7 @@ body > .menu > .inner {
     position: relative;
     white-space: nowrap;
 	height: 100%;
+	width: 100%;
 }
 body > .menu > .inner > .item {
     border-bottom: 3px solid transparent;
@@ -295,6 +296,11 @@ body > .menu > .inner > .item.selected {
     line-height: 35px;
 	cursor: default;
 }
+body > .menu > .inner > .item.right {
+    position: absolute;
+    right: 13px;
+}
+
 .box.tag {
     display: none;
 }
