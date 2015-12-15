@@ -33,6 +33,7 @@ console.log(fd);
 $(".keyword > p").html("");
 $(".keyword > img").attr("src", "");
 $(".keyword > .loading").fadeIn();
+$(".keyword.tag").hide();
 $.ajax({
     url: "/photos/upload",
     type: "POST",
@@ -46,6 +47,7 @@ var output = data.split(")").join(")<br />");
 $(".keyword > .loading").hide();
 $(".keyword > img").attr("src", "http://104.155.201.35:3000/uploads/" +  fileName);
 $(".keyword > p").html(output);
+$(".keyword.tag").fadeIn();
 });
                         } else {
                             alert("アップロード可能なファイル形式：jpeg");

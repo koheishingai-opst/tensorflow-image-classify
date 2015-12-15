@@ -295,3 +295,6 @@ body > .menu > .inner > .item.selected {
     line-height: 35px;
 	cursor: default;
 }
+.box.tag {
+    display: none;
+}
