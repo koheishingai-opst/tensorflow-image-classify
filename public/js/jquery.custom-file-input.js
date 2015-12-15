@@ -34,7 +34,7 @@ $(".keyword > p").html("");
 $(".keyword > img").attr("src", "");
 $(".keyword > .loading").fadeIn();
 $(".box.tag").hide();
-$(".box.keyword").hide();
+$(".box.keyword").fadeIn();
 $(".box.register").hide();
 $(".box.comment").hide();
 $.ajax({
